@@ -1,0 +1,8 @@
+internal class TermoGame
+{
+    public void Game()
+    {
+        string input = Console.ReadLine();
+        string palavraCerta = "aureo";
+    }
+}
