@@ -1,8 +1,52 @@
+using static System.Net.Mime.MediaTypeNames;
+
 internal class TermoGame
 {
     public void Game()
     {
         string input = Console.ReadLine();
         string palavraCerta = "aureo";
+
+        // Checa se a palavra digitada tem 5 letras
+        if (input.Length != palavraCerta.Length)
+        {
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("A palavra tem que ter EXATAMENTE 5 letras");
+            Console.ResetColor();
+            Game();
+        }
+
+        // Verifica se contém a letra na palavra e colore
+        else
+        {
+            if(input == palavraCerta)
+            {
+                Console.WriteLine($"Parabén você acertou, a palavra certa é {palavraCerta.ToUpper()}");
+            }
+            for (int i = 0; i < palavraCerta.Length; i++)
+            {
+                if (input[i] == palavraCerta[i])
+                {
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.WriteLine(input[i]);
+                }
+                else
+                {
+                    if (palavraCerta.Contains(input[i]))
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine(input[i]);
+                    }
+                    else 
+                    { 
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.WriteLine(input[i]);
+                    }
+                }
+            }
+        }
+
+        Console.ResetColor();
+        Game();
     }
 }
