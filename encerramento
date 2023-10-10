@@ -1,0 +1,16 @@
+using System;
+
+namespace Encerramento
+{
+    internal class EncerraGame
+    {
+        public void Encerra() 
+        {
+            int j = 0;
+            if (j == 5)
+            {
+                Environment.Exit(0);
+            }
+        }
+    }
+}
