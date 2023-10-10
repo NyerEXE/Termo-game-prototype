@@ -1,0 +1,14 @@
+using System;
+
+namespace View
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Tente acertar a palavra (5 letras)!");
+            TermoGame termoGame = new TermoGame();
+            termoGame.Game();
+        }
+    }
+}
